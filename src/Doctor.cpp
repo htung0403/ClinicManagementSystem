@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-int Doctor::nextId = 1;
+int Doctor::nextId = 101;
 
 Doctor::Doctor() : doctorId(nextId++), name(""), specialty(""), phoneNumber("") {}
 

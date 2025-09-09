@@ -7,6 +7,7 @@ using namespace std;
 class Appointment
 {
 private:
+    static int nextId;
     int appointmentId;
     int patientId;
     int doctorId;
