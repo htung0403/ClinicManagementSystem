@@ -5,16 +5,19 @@
 #include <vector>
 using namespace std;
 
-class Doctor {
+class Doctor
+{
 private:
+    static int nextId;
     int doctorId;
     string name;
     string specialty;
     string phoneNumber;
     vector<int> appointmentList;
+
 public:
     Doctor();
-    Doctor(const string& name, const string& specialty, const string& phoneNumber);
+    Doctor(const string &name, const string &specialty, const string &phoneNumber);
     ~Doctor();
 
     void assignAppointment(int appointmentId); // Gán lịch hẹn
@@ -26,8 +29,8 @@ public:
     string getPhoneNumber() const;
     vector<int> getAppointmentList() const;
 
-    void setSpecialty(const string& specialty);
-    void setPhoneNumber(const string& phoneNumber);
+    void setSpecialty(const string &specialty);
+    void setPhoneNumber(const string &phoneNumber);
 };
 
 #endif // DOCTOR_H
