@@ -5,21 +5,24 @@
 #include <vector>
 using namespace std;
 
-class Patient {
+class Patient
+{
 private:
+    static int nextId;
     int patientId;
     string name;
     int age;
     string address;
     string phoneNumber;
     vector<string> medicalHistory;
+
 public:
     Patient();
     Patient(const string &name, int age, const string &address, const string &phoneNumber);
     ~Patient();
 
-    virtual void scheduleAppointment(); // Đặt lịch hẹn
-    virtual void showInfo() const;      // Hiển thị thông tin bệnh nhân
+    virtual void scheduleAppointment();           // Đặt lịch hẹn
+    virtual void showInfo() const;                // Hiển thị thông tin bệnh nhân
     void addMedicalHistory(const string &record); // Thêm lịch sử khám
 
     int getPatientId() const;
