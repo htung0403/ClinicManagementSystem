@@ -4,8 +4,8 @@ using namespace std;
 
 int main() {
     // Create Appointment objects
-    Appointment a1(1, 101, "2025-09-15", "09:00", "General Checkup");
-    Appointment a2(2, 102, "2025-09-16", "10:30", "Follow-up");
+    Appointment a1(1, 101, "15/09/2025", "09:00", "General Checkup");
+    Appointment a2(2, 102, "16/09/2025", "10:30", "Follow-up");
 
     // Show appointment info
     cout << "Appointment 1 Info:" << endl;
@@ -16,7 +16,7 @@ int main() {
     cout << endl;
 
     // Reschedule appointment 1
-    a1.reschedule("2025-09-17", "11:00");
+    a1.reschedule("17/09/2025", "11:00");
     cout << "Rescheduled Appointment 1 Info:" << endl;
     a1.showInfo();
     cout << endl;
