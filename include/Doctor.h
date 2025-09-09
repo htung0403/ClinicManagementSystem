@@ -3,43 +3,31 @@
 
 #include <string>
 #include <vector>
-#include <iostream>
-
 using namespace std;
-    
+
 class Doctor {
 private:
-    int doctorID;
+    int doctorId;
     string name;
     string specialty;
-    string contactInfo;
-    vector<int> assignedAppointments;
-
+    string phoneNumber;
+    vector<int> appointmentList;
 public:
-    // Constructors and Destructor
     Doctor();
-    Doctor(const string& name, const string& specialty, const string& contact);
+    Doctor(const string& name, const string& specialty, const string& phoneNumber);
     ~Doctor();
 
-    // Appointment management methods
-    void assignAppointment(int appointmentID);
-    void removeAppointment(int appointmentID);
-    bool hasAppointment(int appointmentID) const;
+    void assignAppointment(int appointmentId); // Gán lịch hẹn
+    void showInfo() const;                     // Hiển thị thông tin bác sĩ
 
-    // Display method
-    void displayDoctorInfo() const;
-
-    // Getters
-    int getDoctorID() const;
+    int getDoctorId() const;
     string getName() const;
     string getSpecialty() const;
-    string getContactInfo() const;
-    vector<int> getAssignedAppointments() const;
-    int getAppointmentCount() const;
+    string getPhoneNumber() const;
+    vector<int> getAppointmentList() const;
 
-    // Setters
     void setSpecialty(const string& specialty);
-    void setContactInfo(const string& contact);
+    void setPhoneNumber(const string& phoneNumber);
 };
 
 #endif // DOCTOR_H

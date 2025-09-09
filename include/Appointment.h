@@ -2,56 +2,37 @@
 #define APPOINTMENT_H
 
 #include <string>
-#include <iostream>
-
 using namespace std;
 
 class Appointment
 {
 private:
-    static int nextID;
-    int appointmentID;
-    int patientID;
-    int doctorID;
+    int appointmentId;
+    int patientId;
+    int doctorId;
     string date;
     string time;
     string reason;
     string status; // "Scheduled", "Completed", "Canceled"
-
 public:
-    // Constructors and Destructor
     Appointment();
-    
-    Appointment(int patientID, int doctorID, const string &date,
-                const string &time, const string &reason);
-
+    Appointment(int patientId, int doctorId, const string &date, const string &time, const string &reason);
     ~Appointment();
 
-    // Status management methods
-    void updateStatus(const string &newStatus);
-    void reschedule(const string &newDate, const string &newTime);
-    void cancel();
-    void complete();
+    void updateStatus(const string &newStatus);                    // Đổi trạng thái
+    void reschedule(const string &newDate, const string &newTime); // Đổi ngày giờ
+    void cancel();                                                 // Hủy lịch hẹn
+    void complete();                                               // Hoàn thành lịch hẹn
+    void showInfo() const;                                         // Hiển thị thông tin lịch hẹn
 
-    // Display method
-    void displayAppointmentInfo() const;
-
-    // Validation methods
-    bool isValidStatus(const string &status) const;
-    bool isScheduled() const;
-    bool isCanceled() const;
-    bool isCompleted() const;
-
-    // Getters
-    int getAppointmentID() const;
-    int getPatientID() const;
-    int getDoctorID() const;
+    int getAppointmentId() const;
+    int getPatientId() const;
+    int getDoctorId() const;
     string getDate() const;
     string getTime() const;
     string getReason() const;
     string getStatus() const;
 
-    // Setters
     void setDate(const string &newDate);
     void setTime(const string &newTime);
     void setReason(const string &newReason);
