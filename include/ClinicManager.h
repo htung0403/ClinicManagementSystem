@@ -27,6 +27,15 @@ public:
     void showAllPatients() const;
     void showAllDoctors() const;
     void showAllAppointments() const;
+
+    // Tìm kiếm bệnh nhân theo tên
+    Patient* findPatientByName(const string& name) const;
+    // Tìm kiếm bệnh nhân theo ID
+    Patient* findPatientById(int id) const;
+    // Tìm kiếm bác sĩ theo tên
+    Doctor* findDoctorByName(const string& name) const;
+    // Tìm kiếm bác sĩ theo ID
+    Doctor* findDoctorById(int id) const;
 };
 
 #endif // CLINIC_MANAGER_H

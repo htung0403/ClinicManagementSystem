@@ -63,3 +63,39 @@ void ClinicManager::showAllAppointments() const
         appointments[i]->showInfo();
     }
 }
+
+// Tìm kiếm bệnh nhân theo tên
+Patient* ClinicManager::findPatientByName(const string& name) const {
+    for (int i = 0; i < patients.size(); ++i) {
+        if (patients[i]->getName() == name)
+            return patients[i];
+    }
+    return nullptr;
+}
+
+// Tìm kiếm bệnh nhân theo ID
+Patient* ClinicManager::findPatientById(int id) const {
+    for (int i = 0; i < patients.size(); ++i) {
+        if (patients[i]->getPatientId() == id)
+            return patients[i];
+    }
+    return nullptr;
+}
+
+// Tìm kiếm bác sĩ theo tên
+Doctor* ClinicManager::findDoctorByName(const string& name) const {
+    for (int i = 0; i < doctors.size(); ++i) {
+        if (doctors[i]->getName() == name)
+            return doctors[i];
+    }
+    return nullptr;
+}
+
+// Tìm kiếm bác sĩ theo ID
+Doctor* ClinicManager::findDoctorById(int id) const {
+    for (int i = 0; i < doctors.size(); ++i) {
+        if (doctors[i]->getDoctorId() == id)
+            return doctors[i];
+    }
+    return nullptr;
+}

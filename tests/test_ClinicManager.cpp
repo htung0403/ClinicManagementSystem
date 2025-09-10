@@ -29,5 +29,64 @@ int main() {
     manager.showAllAppointments();
     cout << endl;
 
+    // Test tìm kiếm bệnh nhân theo tên
+    cout << "\nTest: Find Patient by Name (Le Thi B)" << endl;
+    Patient* p = manager.findPatientByName("Le Thi B");
+    if (p) {
+        cout << "Found: ";
+        p->showInfo();
+    } else {
+        cout << "Not found!" << endl;
+    }
+
+    // Test tìm kiếm bệnh nhân theo ID
+    cout << "\nTest: Find Patient by ID (1)" << endl;
+    p = manager.findPatientById(1);
+    if (p) {
+        cout << "Found: ";
+        p->showInfo();
+    } else {
+        cout << "Not found!" << endl;
+    }
+
+    // Test tìm kiếm bác sĩ theo tên
+    cout << "\nTest: Find Doctor by Name (Dr. Hehe)" << endl;
+    Doctor* d = manager.findDoctorByName("Dr. Hehe");
+    if (d) {
+        cout << "Found: ";
+        d->showInfo();
+    } else {
+        cout << "Not found!" << endl;
+    }
+
+    // Test tìm kiếm bác sĩ theo ID
+    cout << "\nTest: Find Doctor by ID (102)" << endl;
+    d = manager.findDoctorById(102);
+    if (d) {
+        cout << "Found: ";
+        d->showInfo();
+    } else {
+        cout << "Not found!" << endl;
+    }
+
+    // Test tìm kiếm không tồn tại
+    cout << "\nTest: Find Patient by Name (Not Exist)" << endl;
+    p = manager.findPatientByName("Nguyen Van A");
+    if (p) {
+        cout << "Found: ";
+        p->showInfo();
+    } else {
+        cout << "Not found!" << endl;
+    }
+
+    cout << "\nTest: Find Doctor by ID (999)" << endl;
+    d = manager.findDoctorById(999);
+    if (d) {
+        cout << "Found: ";
+        d->showInfo();
+    } else {
+        cout << "Not found!" << endl;
+    }
+
     return 0;
 }
